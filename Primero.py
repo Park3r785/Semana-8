@@ -17,7 +17,10 @@ def main():
     numero_inicio=int(input("Ingrese el número de inicio: "))
     numero_fin=int(input("Ingrese el número de fin: "))
 
-    paso = 1 if numero_inicio <= numero_fin else -1
+    if numero_inicio <= numero_fin:
+        paso = 1
+    else:
+        paso = -1
     resultado = buscar_multiplo(numero_inicio, numero_fin, paso)
 
     if resultado is None:
