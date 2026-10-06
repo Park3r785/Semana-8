@@ -8,7 +8,7 @@ def buscar_multiplo(actual, fin, paso, resultado=None):
             resultado = actual
         elif paso == 1:
             resultado = max(resultado, actual)   # adelante: el máximo
-        else:
+        elif paso == -1:
             resultado = min(resultado, actual)   # atrás: el mínimo
 
     return buscar_multiplo(actual + paso, fin, paso, resultado)
