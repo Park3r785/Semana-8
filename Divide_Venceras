@@ -1,0 +1,15 @@
+def mult(u, v):
+    n = max(len(str(u)), len(str(v)))
+    if n == 1:                      # caso base: números pequeños
+        return u * v
+    s = n // 2
+    w, x = u // 10**s, u % 10**s
+    y, z = v // 10**s, v % 10**s
+    return (mult(w, y) * 10**(2*s) + (mult(w, z) + mult(x, y)) * 10**s + mult(x, z))
+
+def main():
+    u = int(input("Ingrese el primer número: "))
+    v = int(input("Ingrese el segundo número: "))
+    resultado = mult(u, v)
+    print(f"El resultado de multiplicar {u} y {v} es: {resultado}")
+main()
